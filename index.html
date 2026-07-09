@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build with AI – Google Antigravity | GDG Libreville</title>
+  <meta name="description"
+    content="Rejoignez l'événement Build with AI – Google Antigravity organisé par le GDG Libreville au Gabon. Explorez le futur de l'intelligence artificielle et du développement d'agents autonomes.">
+  <link rel="stylesheet" href="style.css">
+  <!-- FontAwesome pour les icônes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Decorative African Wax Band at the very top -->
+  <div class="wax-border"></div>
+
+  <!-- Header Section -->
+  <header id="header">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <i class="fa-solid fa-code"></i> <span>GDG <span class="blue">Libre</span><span class="red">ville</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Accueil</a></li>
+        <li><a href="#speakers">Intervenants</a></li>
+        <li><a href="#schedule">Programme</a></li>
+        <li><button class="btn btn-secondary open-modal-btn">S'inscrire</button></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container hero-content">
+      <div class="badge">
+        <div class="badge-dot"></div>
+        <span>Mbolo Libreville • Événement Tech Gabon</span>
+      </div>
+      <h1 class="hero-title">Build with AI <br><span class="blue">Google</span> <span class="red">Anti</span><span
+          class="yellow">gra</span><span class="green">vity</span></h1>
+      <p class="hero-desc">Rejoignez la communauté de l'Estuaire pour 3 jours d'apprentissage intensif. Venez concevoir
+        et déployer des agents d'IA autonomes avec les dernières technologies de Google.</p>
+      
+      <div class="countdown-wrapper">
+        <p class="countdown-title">Le grand rendez-vous de l'IA à Libreville commence dans :</p>
+        <div class="countdown-container" id="countdown">
+          <div class="countdown-box">
+            <div class="countdown-val" id="days">00</div>
+            <div class="countdown-label">Jours</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-val" id="hours">00</div>
+            <div class="countdown-label">Heures</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-val" id="minutes">00</div>
+            <div class="countdown-label">Minutes</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-val" id="seconds">00</div>
+            <div class="countdown-label">Secondes</div>
+          </div>
+        </div>
+        <!-- Ornement gabonais discret qui réutilise la palette Google -->
+        <div class="countdown-ornament">
+          <svg viewBox="0 0 240 12" width="100%" height="12" aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="countdown-pagne" width="40" height="12" patternUnits="userSpaceOnUse">
+                <polygon points="0,12 10,0 20,12" fill="var(--google-blue)"/>
+                <polygon points="10,0 20,12 30,0" fill="var(--google-red)"/>
+                <polygon points="20,12 30,0 40,12" fill="var(--google-yellow)"/>
+                <rect x="0" y="10" width="40" height="2" fill="var(--google-green)"/>
+              </pattern>
+            </defs>
+            <rect width="240" height="12" fill="url(#countdown-pagne)"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <button class="btn btn-primary open-modal-btn">Réserver ma place <i
+            class="fa-solid fa-arrow-right"></i></button>
+        <a href="#schedule" class="btn btn-secondary">Voir le programme <i class="fa-solid fa-calendar-days"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gabonese Geometric Divider -->
+  <div class="gab-divider-container">
+    <svg class="gab-divider" viewBox="0 0 100 20" preserveAspectRatio="none">
+      <path d="M 0 10 L 10 0 L 20 10 L 30 0 L 40 10 L 50 0 L 60 10 L 70 0 L 80 10 L 90 0 L 100 10"
+        stroke="var(--google-blue)" stroke-width="2" fill="none" />
+      <path d="M 0 10 L 10 20 L 20 10 L 30 20 L 40 10 L 50 20 L 60 10 L 70 20 L 80 10 L 90 20 L 100 10"
+        stroke="var(--google-red)" stroke-width="2" fill="none" />
+      <polygon points="10,0 20,10 10,20 0,10" fill="var(--google-yellow)" opacity="0.4" />
+      <polygon points="50,0 60,10 50,20 40,10" fill="var(--google-green)" opacity="0.4" />
+      <polygon points="90,0 100,10 90,20 80,10" fill="var(--google-blue)" opacity="0.4" />
+    </svg>
+  </div>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="container stats-grid">
+      <div class="stat-item">
+        <h3>150+</h3>
+        <p>Participants attendus</p>
+      </div>
+      <div class="stat-item">
+        <h3>5</h3>
+        <p>Sessions & Codelabs</p>
+      </div>
+      <div class="stat-item">
+        <h3>3</h3>
+        <p>Experts Formateurs</p>
+      </div>
+      <div class="stat-item">
+        <h3>Gratuit</h3>
+        <p>Sur Inscription</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gabonese Geometric Divider -->
+  <div class="gab-divider-container">
+    <svg class="gab-divider" viewBox="0 0 100 20" preserveAspectRatio="none">
+      <path d="M 0 10 L 10 0 L 20 10 L 30 0 L 40 10 L 50 0 L 60 10 L 70 0 L 80 10 L 90 0 L 100 10"
+        stroke="var(--google-green)" stroke-width="2" fill="none" />
+      <path d="M 0 10 L 10 20 L 20 10 L 30 20 L 40 10 L 50 20 L 60 10 L 70 20 L 80 10 L 90 20 L 100 10"
+        stroke="var(--google-yellow)" stroke-width="2" fill="none" />
+    </svg>
+  </div>
+
+  <!-- Speakers Section -->
+  <section id="speakers">
+    <div class="container">
+      <h2 class="section-title">Nos <span class="blue">Inter</span><span class="red">ven</span><span
+          class="yellow">ants</span></h2>
+      <p class="section-subtitle">Rencontrez les experts du numérique et de la communauté GDG Gabon qui animeront les
+        ateliers pratiques.</p>
+
+      <div class="speakers-grid">
+        <!-- Speaker 1 -->
+        <div class="speaker-card">
+          <div class="speaker-img-wrapper">
+            <img src="./images/speaker_elara.png" alt="Jean-Pierre Nguema">
+          </div>
+          <h4>Jean-Pierre Nguema</h4>
+          <p class="speaker-role">Lead GDG Libreville</p>
+          <p class="speaker-company">Expert Solution Cloud & Mobile</p>
+          <div class="speaker-socials">
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+        <!-- Speaker 2 -->
+        <div class="speaker-card">
+          <div class="speaker-img-wrapper">
+            <img src="./images/speaker_marcus.png" alt="Dr. Sarah Mendome">
+          </div>
+          <h4>Dr. Sarah Mendome</h4>
+          <p class="speaker-role">Chercheuse IA & Enseignante</p>
+          <p class="speaker-company">Université Omar Bongo (UOB)</p>
+          <div class="speaker-socials">
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+        <!-- Speaker 3 -->
+        <div class="speaker-card">
+          <div class="speaker-img-wrapper">
+            <img src="./images/speaker_aria.png" alt="Marc Mezui">
+          </div>
+          <h4>Marc Mezui</h4>
+          <p class="speaker-role">Ingénieur Backend & Systèmes</p>
+          <p class="speaker-company">Organisateur GDG Libreville</p>
+          <div class="speaker-socials">
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gabonese Geometric Divider -->
+  <div class="gab-divider-container">
+    <svg class="gab-divider" viewBox="0 0 100 20" preserveAspectRatio="none">
+      <path d="M 0 10 L 10 0 L 20 10 L 30 0 L 40 10 L 50 0 L 60 10 L 70 0 L 80 10 L 90 0 L 100 10"
+        stroke="var(--google-red)" stroke-width="2" fill="none" />
+      <path d="M 0 10 L 10 20 L 20 10 L 30 20 L 40 10 L 50 20 L 60 10 L 70 20 L 80 10 L 90 20 L 100 10"
+        stroke="var(--google-blue)" stroke-width="2" fill="none" />
+    </svg>
+  </div>
+
+  <!-- Schedule/Agenda Section -->
+  <section id="schedule">
+    <div class="container">
+      <h2 class="section-title">Le <span class="green">Pro</span><span class="blue">gramme</span></h2>
+      <p class="section-subtitle">Sessions d'apprentissage intensives conçues pour vous faire passer de la théorie à la
+        mise en œuvre pratique.</p>
+
+      <div class="schedule-tabs">
+        <button class="tab-btn active" data-tab="day1">Jour 1 (Gemini API)</button>
+        <button class="tab-btn" data-tab="day2">Jour 2 (Antigravity)</button>
+        <button class="tab-btn" data-tab="day3">Jour 3 (Codelabs)</button>
+      </div>
+
+      <!-- Day 1 Panel -->
+      <div class="schedule-panel active" id="day1">
+        <div class="schedule-item">
+          <div class="schedule-time">
+            <i class="fa-regular fa-clock"></i> 09:00
+          </div>
+          <div class="schedule-details">
+            <h4>Keynote d'ouverture : L'écosystème IA de Google en 2026</h4>
+            <p>Introduction aux dernières évolutions des modèles Gemini, Gemma et aux outils pour développeurs au Gabon.
+            </p>
+            <div class="schedule-meta">
+              <span><i class="fa-regular fa-user"></i> Jean-Pierre Nguema</span>
+              <span><i class="fa-solid fa-map-location-dot"></i> Salle Principale - ENPTI Libreville</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">
+            <i class="fa-regular fa-clock"></i> 11:00
+          </div>
+          <div class="schedule-details">
+            <h4>Intégration pratique de l'API Gemini</h4>
+            <p>Atelier interactif sur l'utilisation du SDK Google AI et des appels de fonctions (function calling) pour
+              concevoir des applications connectées.</p>
+            <div class="schedule-meta">
+              <span><i class="fa-regular fa-user"></i> Marc Mezui</span>
+              <span><i class="fa-solid fa-map-location-dot"></i> Lab Tech - ENPTI Libreville</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 2 Panel -->
+      <div class="schedule-panel" id="day2">
+        <div class="schedule-item">
+          <div class="schedule-time">
+            <i class="fa-regular fa-clock"></i> 10:00
+          </div>
+          <div class="schedule-details">
+            <h4>Google Antigravity : Développer des agents autonomes</h4>
+            <p>Présentation du framework de développement d'agents intelligents capables de planifier, rechercher et
+              exécuter du code.</p>
+            <div class="schedule-meta">
+              <span><i class="fa-regular fa-user"></i> Dr. Sarah Mendome</span>
+              <span><i class="fa-solid fa-map-location-dot"></i> Salle Principale - ENPTI Libreville</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 3 Panel -->
+      <div class="schedule-panel" id="day3">
+        <div class="schedule-item">
+          <div class="schedule-time">
+            <i class="fa-regular fa-clock"></i> 09:30
+          </div>
+          <div class="schedule-details">
+            <h4>Codelab : Déployer et connecter votre Agent Web</h4>
+            <p>Session pratique de codage où chaque participant construit et déploie sa propre application web connectée
+              à l'agent.</p>
+            <div class="schedule-meta">
+              <span><i class="fa-regular fa-user"></i> Mentors GDG</span>
+              <span><i class="fa-solid fa-map-location-dot"></i> Espace Codelab - ENPTI Libreville</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gabonese Geometric Divider -->
+  <div class="gab-divider-container">
+    <svg class="gab-divider" viewBox="0 0 100 20" preserveAspectRatio="none">
+      <path d="M 0 10 L 10 0 L 20 10 L 30 0 L 40 10 L 50 0 L 60 10 L 70 0 L 80 10 L 90 0 L 100 10"
+        stroke="var(--google-blue)" stroke-width="2" fill="none" />
+      <path d="M 0 10 L 10 20 L 20 10 L 30 20 L 40 10 L 50 20 L 60 10 L 70 20 L 80 10 L 90 20 L 100 10"
+        stroke="var(--google-yellow)" stroke-width="2" fill="none" />
+    </svg>
+  </div>
+
+  <!-- Newsletter Section -->
+  <section>
+    <div class="container">
+      <div class="newsletter-card">
+        <h3>Restez informé</h3>
+        <p>Inscrivez-vous à notre newsletter pour ne manquer aucune annonce concernant l'événement et nos futurs meetups
+          GDG Libreville.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="Votre adresse e-mail" required id="newsletterEmail">
+          <button type="submit" class="btn btn-primary">S'abonner</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <i class="fa-solid fa-code"></i> <span>GDG <span class="blue">Libre</span><span
+                class="red">ville</span></span>
+          </a>
+          <p>Communauté locale des développeurs passionnés par les technologies Google au Gabon.</p>
+        </div>
+        <div class="footer-links">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#speakers">Intervenants</a></li>
+            <li><a href="#schedule">Programme</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>Ressources</h5>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Code de conduite</a></li>
+            <li><a href="#">GDG Community</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 GDG Libreville. Tous droits réservés.</p>
+        <p>Fait avec <i class="fa-solid fa-heart" style="color: var(--google-red);"></i> pour les développeurs gabonais.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Registration Modal -->
+  <div class="modal-overlay" id="registrationModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModalBtn">&times;</button>
+      <h3>Inscrivez-vous gratuitement</h3>
+      <p>Réservez votre place pour assister aux conférences et participer aux ateliers pratiques de l'événement à
+        Libreville.</p>
+      <form id="registrationForm">
+        <div class="form-group">
+          <label for="regName">Nom complet</label>
+          <input type="text" id="regName" required placeholder="Ex. Marc Koumba">
+        </div>
+        <div class="form-group">
+          <label for="regEmail">Adresse e-mail</label>
+          <input type="email" id="regEmail" required placeholder="Ex. marc@gmail.com">
+        </div>
+        <div class="form-group">
+          <label for="regPassType">Type de participation</label>
+          <select id="regPassType" required>
+            <option value="presential">Présentiel (ENPTI Libreville)</option>
+            <option value="virtual">En ligne uniquement</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Valider mon inscription</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Success Toast -->
+  <div class="toast" id="successToast">
+    <div class="toast-icon"><i class="fa-solid fa-circle-check"></i></div>
+    <div class="toast-content" id="toastMessage">Inscription validée !</div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
