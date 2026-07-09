@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Événements à venir | GDG Libreville</title>
+  <meta name="description"
+    content="Découvrez l'agenda des prochains meetups, ateliers et codelabs organisés par le Google Developer Group (GDG) Libreville au Gabon.">
+  <link rel="stylesheet" href="style.css">
+  <!-- FontAwesome pour les icônes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Styles spécifiques pour la page Événements */
+    .events-wrapper {
+      padding: 8rem 2rem 4rem 2rem;
+      min-height: calc(100vh - 80px - 280px);
+      z-index: 1;
+      position: relative;
+    }
+
+    .events-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 4rem auto;
+    }
+
+    .events-title {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .events-desc {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .event-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+      transition: var(--transition-normal);
+      position: relative;
+    }
+
+    .event-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Indicateur de couleur Google en haut de chaque carte */
+    .event-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+    }
+
+    .event-card.blue::before { background-color: var(--google-blue); }
+    .event-card.red::before { background-color: var(--google-red); }
+    .event-card.yellow::before { background-color: var(--google-yellow); }
+    .event-card.green::before { background-color: var(--google-green); }
+
+    .event-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .event-card.blue .event-badge { background: rgba(66, 133, 244, 0.1); color: var(--google-blue); }
+    .event-card.red .event-badge { background: rgba(234, 67, 53, 0.1); color: var(--google-red); }
+    .event-card.yellow .event-badge { background: rgba(249, 171, 0, 0.1); color: var(--google-yellow); }
+    .event-card.green .event-badge { background: rgba(52, 168, 83, 0.1); color: var(--google-green); }
+
+    .event-content {
+      padding: 2rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .event-card-title {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+      line-height: 1.3;
+    }
+
+    .event-card-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .event-meta {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      border-top: 1px solid var(--border-color);
+      padding-top: 1rem;
+    }
+
+    .event-meta li {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    .event-meta i {
+      width: 16px;
+      text-align: center;
+    }
+
+    .event-card.blue .event-meta i { color: var(--google-blue); }
+    .event-card.red .event-meta i { color: var(--google-red); }
+    .event-card.yellow .event-meta i { color: var(--google-yellow); }
+    .event-card.green .event-meta i { color: var(--google-green); }
+
+    .event-footer {
+      padding: 0 2rem 2rem 2rem;
+    }
+
+    .event-footer .btn {
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Ornement pagne local discret */
+    .section-separator {
+      margin: 4rem auto;
+      max-width: 300px;
+      opacity: 0.8;
+    }
+
+    .cta-banner {
+      background: #e8f9ee; /* Fond vert WhatsApp très doux */
+      border: 1px solid rgba(37, 211, 102, 0.2);
+      border-left: 6px solid #25d366; /* Bordure gauche verte WhatsApp */
+      border-radius: 12px;
+      padding: 3rem;
+      text-align: center;
+      max-width: 900px;
+      margin: 4rem auto 0 auto;
+      position: relative;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.06);
+    }
+
+    .cta-banner h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #075e54; /* Vert WhatsApp sombre pour le titre */
+    }
+
+    .cta-banner p {
+      color: #354e4b; /* Texte vert foncé atténué */
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Style spécifique pour le bouton WhatsApp */
+    .btn-whatsapp {
+      background-color: #25d366 !important;
+      color: #ffffff !important;
+      border: none !important;
+      box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3) !important;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #20ba56 !important;
+      color: #ffffff !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4) !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Bandeau supérieur aux couleurs africaines / Google -->
+  <div class="wax-border"></div>
+
+  <!-- Header Section -->
+  <header id="header" class="scrolled">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <i class="fa-solid fa-code"></i> <span>GDG <span class="blue">Libre</span><span class="red">ville</span></span>
+      </a>
+      <div class="wordmark-container" style="font-family: var(--ff-header); font-weight: 700; font-size: 1.1rem; color: var(--text-main);">
+        Build <span style="color: var(--google-blue);">with</span> AI
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Accueil</a></li>
+        <li><a href="index.html#speakers">Intervenants</a></li>
+        <li><a href="index.html#schedule">Programme</a></li>
+        <li><a href="#" class="active">Événements</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="events-wrapper">
+    <div class="container">
+      
+      <!-- En-tête de la page -->
+      <div class="events-header">
+        <h1 class="events-title">Nos Événements <span class="blue">à</span> <span class="red">ve</span><span class="yellow">n</span><span class="green">ir</span></h1>
+        <p class="events-desc">
+          Mbolo Libreville ! Découvrez les prochains rendez-vous de la communauté GDG au Gabon. 
+          Des ateliers de codage pratiques, des conférences d'experts et des opportunités uniques de réseautage vous attendent.
+        </p>
+      </div>
+
+      <!-- Grille des événements -->
+      <div class="events-grid">
+        
+        <!-- Événement 1 : Codelab Gemini -->
+        <div class="event-card blue">
+          <div class="event-content">
+            <span class="event-badge">Codelab</span>
+            <h3 class="event-card-title">Atelier Pratique : Gemini & Vertex AI</h3>
+            <p class="event-card-desc">
+              Découvrez comment intégrer des modèles d'IA générative de Google dans vos applications. Apportez votre ordinateur pour coder en direct !
+            </p>
+            <ul class="event-meta">
+              <li><i class="fa-regular fa-calendar"></i> <span>Samedi 19 Septembre 2026</span></li>
+              <li><i class="fa-regular fa-clock"></i> <span>14:00 - 17:00 (GMT+1)</span></li>
+              <li><i class="fa-solid fa-location-dot"></i> <span>ENPTI, Libreville, Gabon</span></li>
+            </ul>
+          </div>
+          <div class="event-footer">
+            <a href="index.html#registrationModal" class="btn btn-primary">S'inscrire gratuitement</a>
+          </div>
+        </div>
+
+        <!-- Événement 2 : DevFest Libreville -->
+        <div class="event-card red">
+          <div class="event-content">
+            <span class="event-badge">Conférence</span>
+            <h3 class="event-card-title">DevFest Libreville 2026</h3>
+            <p class="event-card-desc">
+              Le plus grand événement de développeurs au Gabon. Des conférences inspirantes, des sessions techniques et une grande rencontre communautaire.
+            </p>
+            <ul class="event-meta">
+              <li><i class="fa-regular fa-calendar"></i> <span>Samedi 14 Novembre 2026</span></li>
+              <li><i class="fa-regular fa-clock"></i> <span>09:00 - 18:00 (GMT+1)</span></li>
+              <li><i class="fa-solid fa-location-dot"></i> <span>Hôtel Nomad, Libreville, Gabon</span></li>
+            </ul>
+          </div>
+          <div class="event-footer">
+            <a href="#" class="btn btn-secondary">Bientôt disponible</a>
+          </div>
+        </div>
+
+        <!-- Événement 3 : Table Ronde IA -->
+        <div class="event-card yellow">
+          <div class="event-content">
+            <span class="event-badge">Table Ronde</span>
+            <h3 class="event-card-title">L'IA & l'Entrepreneuriat local</h3>
+            <p class="event-card-desc">
+              Rencontre interactive avec des entrepreneurs tech gabonais pour discuter des opportunités concrètes et des défis de l'IA dans notre économie.
+            </p>
+            <ul class="event-meta">
+              <li><i class="fa-regular fa-calendar"></i> <span>Jeudi 10 Décembre 2026</span></li>
+              <li><i class="fa-regular fa-clock"></i> <span>18:30 - 20:30 (GMT+1)</span></li>
+              <li><i class="fa-solid fa-location-dot"></i> <span>Espace StartX & En Ligne</span></li>
+            </ul>
+          </div>
+          <div class="event-footer">
+            <a href="#" class="btn btn-secondary">En savoir plus</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Séparateur ornemental (Pagne gabonais discret) -->
+      <div class="section-separator">
+        <svg viewBox="0 0 240 24" width="100%" height="24" aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="pagne-pattern" width="40" height="24" patternUnits="userSpaceOnUse">
+              <polygon points="0,24 10,0 20,24" fill="#4285F4"/>
+              <polygon points="10,0 20,24 30,0" fill="#EA4335"/>
+              <polygon points="20,24 30,0 40,24" fill="#F9AB00"/>
+              <rect x="0" y="20" width="40" height="4" fill="#34A853"/>
+            </pattern>
+          </defs>
+          <rect width="240" height="24" fill="url(#pagne-pattern)"/>
+        </svg>
+      </div>
+
+      <!-- Bannière Appel à l'action pour les bénévoles/propositions -->
+      <div class="cta-banner">
+        <h3>Vous voulez partager vos connaissances ?</h3>
+        <p>
+          GDG Libreville est une communauté ouverte. Si vous souhaitez animer un atelier, proposer un sujet de conférence ou devenir bénévole pour nos prochains événements, faites-nous signe !
+        </p>
+        <a href="https://wa.me/24100000000" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Nous contacter sur WhatsApp</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <i class="fa-solid fa-code"></i> <span>GDG <span class="blue">Libre</span><span class="red">ville</span></span>
+          </a>
+          <p>Communauté locale des développeurs passionnés par les technologies Google au Gabon.</p>
+          <!-- Connexion réseaux sociaux demandée par le workflow -->
+          <div class="social-connect" style="margin-top: 1rem; display: flex; gap: 0.8rem;">
+            <a href="https://linkedin.com" target="_blank" style="color: var(--text-muted); font-size: 1.3rem;" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://facebook.com" target="_blank" style="color: var(--text-muted); font-size: 1.3rem;" aria-label="Facebook"><i class="fa-brands fa-square-facebook"></i></a>
+            <a href="https://wa.me/24100000000" target="_blank" style="color: var(--text-muted); font-size: 1.3rem;" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="index.html#home">Accueil</a></li>
+            <li><a href="index.html#speakers">Intervenants</a></li>
+            <li><a href="index.html#schedule">Programme</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>Ressources</h5>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Code de conduite</a></li>
+            <li><a href="#">GDG Community</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 GDG Libreville. Tous droits réservés.</p>
+        <p>Fait avec <i class="fa-solid fa-heart" style="color: var(--google-red);"></i> pour les développeurs gabonais.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
