@@ -60,9 +60,9 @@ Si vous utilisez VS Code, faites un clic droit sur `index.html` et choisissez **
 Le **GDG Libreville** (Google Developer Group) est une communauté ouverte à tous les passionnés de technologies, développeurs, designers et curieux résidant au Gabon. 
 
 Pour nous suivre et échanger :
-*   **LinkedIn** : [GDG Libreville](https://linkedin.com)
-*   **Facebook** : [GDG Libreville](https://facebook.com)
-*   **WhatsApp** : [Discuter avec nous](https://wa.me/24100000000)
+*   **LinkedIn** : [GDG Libreville](https://www.linkedin.com/company/google-developers-group-libreville/?viewAsMember=true)
+*   **Facebook** : [GDG Libreville](https://www.facebook.com/gdglibreville)
+*   **Site officiel** : [Discuter avec nous](https://gdg.community.dev/gdg-libreville/)
 
 ---
 *Fait avec ❤️ par la communauté GDG Libreville au Gabon.*
