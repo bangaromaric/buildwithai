@@ -1,6 +1,6 @@
 ---
 name: gdg-branding
-description: Charte graphique, composants et touches gabonaises de GDG Libreville (Build with AI). À utiliser dès que l'agent crée ou modifie une page web, un composant d'interface (compte à rebours, bouton, en-tête, hero, section, pied de page), un visuel ou un motif qui doit respecter l'identité GDG Libreville : couleurs Google, ornements gabonais, français.
+description: "Charte graphique, composants et touches gabonaises de GDG Libreville (Build with AI). À utiliser dès que l'agent crée ou modifie une page web, un composant d'interface (compte à rebours, bouton, en-tête, hero, section, pied de page), un visuel ou un motif qui doit respecter l'identité GDG Libreville : couleurs Google, ornements gabonais, français."
 ---
 
 # GDG Libreville — Branding
